@@ -8,8 +8,17 @@ const obtenerLibros = async () => {
     });
 };
 
+const obtenerLibrosPaginados = async (limit: number, offset: number) => {
+    return await prisma.libro.findMany({
+        take: limit,
+        skip: offset,
+        orderBy: { id_libro: "asc" }
+    });
+};
+
 const LibroModel = {
-    obtenerLibros
+    obtenerLibros,
+    obtenerLibrosPaginados
 };
 
 export default LibroModel;
