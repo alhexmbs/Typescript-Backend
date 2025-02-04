@@ -8,7 +8,7 @@ const obtenerLibros = async () => {
         throw new Error('Error al obtener los libros' + error.message)
     }
 
-}
+};
 
 const obtenerLibrosPaginados = async (page: number, pageSize: number) => {
     try {
@@ -18,14 +18,54 @@ const obtenerLibrosPaginados = async (page: number, pageSize: number) => {
         const libros = await LibroModel.obtenerLibrosPaginados(limit, offset);
         return libros;
     }
-    catch (error:any) {
+    catch (error: any) {
         throw new Error('Error al obtener los libros' + error.message);
+    }
+};
+
+const obtenerLibroPorId = async (id_libro: number) => {
+    try {
+        return await LibroModel.obtenerLibroPorId(id_libro);
+    }
+    catch (error: any) {
+        throw new Error('Error al obtener el libro' + error.message);
+    }
+};
+
+const insertarLibro = async (titulo: string, autor: string, anio: number) => {
+    try {
+        return await LibroModel.insertarLibro(titulo, autor, anio);
+    }
+    catch (error: any) {
+        throw new Error('Error al insertar el libro' + error.message);
+    }
+};
+
+const modificarLibro = async (id_libro: number, titulo: string, autor: string, anio: number) => {
+    try {
+        return await LibroModel.modificarLibro(id_libro, titulo, autor, anio);
+    }
+    catch (error: any) {
+        throw new Error('Error al modificar el libro' + error.message);
+    }
+};
+
+const eliminarLibro = async (id_libro: number) => {
+    try {
+        return await LibroModel.eliminarLibro(id_libro);
+    }
+    catch (error: any) {
+        throw new Error('Error al eliminar el libro' + error.message);
     }
 }
 
 const LibroService = {
     obtenerLibros,
-    obtenerLibrosPaginados
+    obtenerLibrosPaginados,
+    obtenerLibroPorId,
+    insertarLibro,
+    modificarLibro,
+    eliminarLibro
 }
 
 export default LibroService;
