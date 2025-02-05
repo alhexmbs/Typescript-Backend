@@ -6,6 +6,7 @@ import libroRouter from "./ROUTES/libro.routes";
 
 const app = express();
 
+//Probando la conexión a la base de datos
 (async () => {
     try {
         await db.query('SELECT NOW()'); // Consulta simple para verificar la conexión
