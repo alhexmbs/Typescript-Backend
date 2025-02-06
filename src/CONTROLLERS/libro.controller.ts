@@ -1,5 +1,5 @@
 import { error } from "console";
-import LibroService from "../SERVICES/libro.service";
+import LibroService from "../SERVICES/libro.service.js";
 
 const obtenerLibros = async (req: any, res: any) => {
     try {

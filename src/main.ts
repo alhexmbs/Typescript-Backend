@@ -1,8 +1,8 @@
 import "dotenv/config";
 import express from "express";
-import db from "./DATABASE/connection.database";
+import db from "./DATABASE/connection.database.js";
 import cors from "cors";
-import libroRouter from "./ROUTES/libro.routes";
+import libroRouter from "./ROUTES/libro.routes.js";
 
 const app = express();
 

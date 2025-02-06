@@ -1,4 +1,4 @@
-import LibroModel from "../MODELS/libro.model";
+import LibroModel from "../MODELS/libro.model.js";
 
 const obtenerLibros = async () => {
     try {
